@@ -14,8 +14,8 @@ public class RmiClient {
             BookRemoteService bookService = (BookRemoteService) registry.lookup("BookRemoteService");
 
             // Пример использования RMI сервиса
-            List<BookRMI> books = bookService.getAllBooks(0, 10);
-            books.forEach(book -> System.out.println(book.getId()));
+            List<BookRMI> books = bookService.getAllBooks(0, 100);
+            books.forEach(book -> System.out.println(book.getTitle()));
         } catch (Exception e) {
             e.printStackTrace();
         }
